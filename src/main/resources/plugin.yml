@@ -2,6 +2,7 @@ name: CN-Hardcore
 main: me.kevsal.minecraft.cnhardcore.CNHC
 version: 1.0-SNAPSHOT
 author: Kevinjss1
+api-version: 1.14
 commands:
   hc-version:
     description: Get the plugin version
