@@ -1,0 +1,6 @@
+switches:
+  configVersion: 0
+config:
+  messages:
+    prefix: "&4&lCNHC>> "
+    access-denied: "&cAccess denied."
