@@ -8,6 +8,14 @@ commands:
     description: Get the plugin version
     usage: /<command>
     permission: cnhc.version
+    aliases: [cnhc-version]
+  hc-reload:
+    description: Reload the plugin
+    usage: /<command>
+    permission: cnhc.reload
+    aliases: [cnhc-reload]
 permissions:
   cnhc.version:
+    default: op
+  cnhc.reload:
     default: op
