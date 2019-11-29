@@ -22,10 +22,7 @@ public class CNHC extends JavaPlugin {
 
         //LuckPerms api
         // ive never used an external api like this so lots of copy and pasted code
-        RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
-        if (provider != null) {
-            LuckPerms api = provider.getProvider();
-        }
+        //RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
 
     }
 
