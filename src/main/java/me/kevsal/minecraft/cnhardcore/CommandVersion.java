@@ -19,12 +19,12 @@ public class CommandVersion implements CommandExecutor {
         if (sender instanceof Player) {
             Player p = (Player) sender;
             if (p.hasPermission("cnhc.version")) {
-                p.sendMessage("Version: " + plugin.getDescription().getVersion());
+                p.sendMessage(plugin.getPrefix() + ChatColor.RESET + "Version: " + plugin.getDescription().getVersion());
             } else {
                 p.sendMessage(plugin.getADM());
             }
         } else {
-            sender.sendMessage("Version: " + plugin.getDescription().getVersion());
+            sender.sendMessage(plugin.getPrefix() + ChatColor.RESET + "Version: " + plugin.getDescription().getVersion());
         }
 
         return true;
