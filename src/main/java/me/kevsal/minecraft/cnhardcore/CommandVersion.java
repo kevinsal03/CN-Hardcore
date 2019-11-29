@@ -21,7 +21,7 @@ public class CommandVersion implements CommandExecutor {
             if (p.hasPermission("cnhc.version")) {
                 p.sendMessage("Version: " + plugin.getDescription().getVersion());
             } else {
-                p.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("config.messages.prefix")) + ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("config.messages.access-denied")));
+                p.sendMessage(plugin.getADM());
             }
         } else {
             sender.sendMessage("Version: " + plugin.getDescription().getVersion());

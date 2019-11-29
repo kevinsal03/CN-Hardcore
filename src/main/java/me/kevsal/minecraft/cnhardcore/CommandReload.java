@@ -19,14 +19,14 @@ public class CommandReload implements CommandExecutor {
         if (sender instanceof Player) {
             Player p = (Player) sender;
             if (p.hasPermission("cnhc.reload")) {
-                p.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("config.messages.prefix")) + ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("config.messages.reload-warn")));
+                p.sendMessage(plugin.getPrefix() + ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("config.messages.reload-warn")));
                 plugin.reloadPlugin();
                 p.sendMessage("Reload Complete");
             } else {
-                p.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("config.messages.prefix")) + ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("config.messages.access-denied")));
+                p.sendMessage(plugin.getADM());
             }
         } else {
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("config.messages.prefix")) + ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("config.messages.reload-warn")));
+            sender.sendMessage(plugin.getPrefix() + ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("config.messages.reload-warn")));
             plugin.reloadPlugin();
             sender.sendMessage("Reload Complete");
         }

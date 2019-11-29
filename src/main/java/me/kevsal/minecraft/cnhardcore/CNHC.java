@@ -1,6 +1,7 @@
 package me.kevsal.minecraft.cnhardcore;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class CNHC extends JavaPlugin {
@@ -28,4 +29,13 @@ public class CNHC extends JavaPlugin {
         this.saveDefaultConfig(); //save default if its missing
     }
 
+    /* Common gets from config file for messages */
+    //get plugin prefix
+    public String getPrefix() {
+        return ChatColor.translateAlternateColorCodes('&', this.getConfig().getString("config.messages.prefix"));
+    }
+    //get access denied message
+    public String getADM() {
+        return ChatColor.translateAlternateColorCodes('&', this.getConfig().getString("config.messages.prefix")) + ChatColor.translateAlternateColorCodes('&', this.getConfig().getString("config.messages.access-denied"));
+    }
 }
