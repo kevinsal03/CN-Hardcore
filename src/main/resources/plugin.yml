@@ -10,4 +10,4 @@ commands:
     permission: cnhc.version
 permissions:
   cnhc.version:
-    default: none
+    default: op
