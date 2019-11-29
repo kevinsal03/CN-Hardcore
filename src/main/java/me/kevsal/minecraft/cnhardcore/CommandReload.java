@@ -21,14 +21,14 @@ public class CommandReload implements CommandExecutor {
             if (p.hasPermission("cnhc.reload")) {
                 p.sendMessage(plugin.getPrefix() + ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("config.messages.reload-warn")));
                 plugin.reloadPlugin();
-                p.sendMessage("Reload Complete");
+                sender.sendMessage(plugin.getPrefix() + ChatColor.RESET + "Reload Complete");
             } else {
                 p.sendMessage(plugin.getADM());
             }
         } else {
             sender.sendMessage(plugin.getPrefix() + ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("config.messages.reload-warn")));
             plugin.reloadPlugin();
-            sender.sendMessage("Reload Complete");
+            sender.sendMessage(plugin.getPrefix() + ChatColor.RESET + "Reload Complete");
         }
 
 
