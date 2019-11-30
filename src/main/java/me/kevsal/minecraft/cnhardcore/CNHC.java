@@ -7,6 +7,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public class CNHC extends JavaPlugin {
 
     @Override
@@ -16,13 +18,16 @@ public class CNHC extends JavaPlugin {
         this.saveDefaultConfig();
 
         //register commands
-        this.getCommand("hc-version").setExecutor(new CommandVersion(this));
-        this.getCommand("hc-reload").setExecutor(new CommandReload(this));
+        Objects.requireNonNull(this.getCommand("hc-version")).setExecutor(new CommandVersion(this));
+        Objects.requireNonNull(this.getCommand("hc-reload")).setExecutor(new CommandReload(this));
+
+        //register event
+        getServer().getPluginManager().registerEvents(new ListenerPlayerDeath(this), this );
 
 
         //LuckPerms api
         // ive never used an external api like this so lots of copy and pasted code
-        //RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
+        RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
 
     }
 
@@ -41,10 +46,10 @@ public class CNHC extends JavaPlugin {
     /* Common gets from config file for messages */
     //get plugin prefix
     public String getPrefix() {
-        return ChatColor.translateAlternateColorCodes('&', this.getConfig().getString("config.messages.prefix"));
+        return ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(this.getConfig().getString("config.messages.prefix")));
     }
     //get access denied message
     public String getADM() {
-        return ChatColor.translateAlternateColorCodes('&', this.getConfig().getString("config.messages.prefix")) + ChatColor.translateAlternateColorCodes('&', this.getConfig().getString("config.messages.access-denied"));
+        return ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(this.getConfig().getString("config.messages.prefix"))) + ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(this.getConfig().getString("config.messages.access-denied")));
     }
 }
