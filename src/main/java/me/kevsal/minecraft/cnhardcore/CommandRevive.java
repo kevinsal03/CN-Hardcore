@@ -2,6 +2,7 @@ package me.kevsal.minecraft.cnhardcore;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -70,9 +71,16 @@ public class CommandRevive implements CommandExecutor {
     }
 
     private boolean revivePlayer(Player p) {
+        boolean allowRevive = plugin.getConfig().getBoolean("config.features.allow-revive");
         //actually revive the player
+        if (allowRevive) {
+            p.setGameMode(GameMode.SURVIVAL);
+            p.sendMessage(ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(plugin.getConfig().getString("config.messages.revive"))));
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " clear server=" + Objects.requireNonNull(plugin.getConfig().getString("config.death-options.server-context")));
+            return true;
+        } else {
+            return false;
+        }
 
-        //TODO: Revive the player
-        return false;
     }
 }

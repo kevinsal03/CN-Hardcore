@@ -55,7 +55,7 @@ public class ListenerPlayerDeath implements Listener {
 
         // TODO: Replace with API operation rather than using command dispatch
         //set the user's group
-        Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent set " + Objects.requireNonNull(plugin.getConfig().getString("config.death-options.dead-group")) + " true server=" +  Objects.requireNonNull(plugin.getConfig().getString("config.death-options.server-context")));
+        Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add " + Objects.requireNonNull(plugin.getConfig().getString("config.death-options.dead-group")) + " true server=" +  Objects.requireNonNull(plugin.getConfig().getString("config.death-options.server-context")));
         // set to spectator
         p.setGameMode(GameMode.SPECTATOR);
     }

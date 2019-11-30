@@ -8,15 +8,19 @@ commands:
   hc-version:
     description: Get the plugin version
     usage: /<command>
-    permission: cnhc.version
     aliases: [cnhc-version]
   hc-reload:
     description: Reload the plugin
     usage: /<command>
-    permission: cnhc.reload
     aliases: [cnhc-reload]
+  hc-revive:
+    description: Revive a dead player (MUST BE ONLINE)
+    usage: /<command> <username>
+    aliases: [cnhc-revive, revive]
 permissions:
   cnhc.version:
     default: op
   cnhc.reload:
+    default: op
+  cnhc.revive:
     default: op

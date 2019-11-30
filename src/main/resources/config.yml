@@ -11,6 +11,7 @@ config:
     death: "&cYou have died! You may spectate the server in Spectator Mode until the next hardcore reset."
     revive-success: "&aPlayer revived successfully!"
     revive-fail: "&cFailed to revive player!"
+    revived: "&aYou have been revived!"
     not-online: "&cPlayer not online"
   death-options:
     # reserved for future use

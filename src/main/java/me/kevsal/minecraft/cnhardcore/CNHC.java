@@ -22,6 +22,7 @@ public class CNHC extends JavaPlugin {
         //register commands
         Objects.requireNonNull(this.getCommand("hc-version")).setExecutor(new CommandVersion(this));
         Objects.requireNonNull(this.getCommand("hc-reload")).setExecutor(new CommandReload(this));
+        Objects.requireNonNull(this.getCommand("hc-revive")).setExecutor(new CommandRevive(this));
 
         //register event
         getServer().getPluginManager().registerEvents(new ListenerPlayerDeath(this), this );
