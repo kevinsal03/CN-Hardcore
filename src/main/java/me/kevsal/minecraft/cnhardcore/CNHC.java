@@ -4,9 +4,11 @@ import net.luckperms.api.LuckPerms;
 import net.luckperms.api.LuckPermsProvider;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class CNHC extends JavaPlugin {
@@ -51,5 +53,13 @@ public class CNHC extends JavaPlugin {
     //get access denied message
     public String getADM() {
         return ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(this.getConfig().getString("config.messages.prefix"))) + ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(this.getConfig().getString("config.messages.access-denied")));
+    }
+
+    public ArrayList<String> getOnlinePlayerUsernames() {
+        ArrayList<String> internal = null;
+        for(Player p : Bukkit.getServer().getOnlinePlayers()) {
+            internal.add(p.getName());
+        }
+        return internal;
     }
 }

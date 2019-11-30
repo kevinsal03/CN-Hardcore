@@ -8,7 +8,10 @@ config:
     prefix: "&4&lCNHC>> "
     access-denied: "&cAccess denied."
     reload-warn: "&c&lWARNING: &cReloading is not advised as it may have some unintended consequences. It is recommended you always restart the server!"
-    death: "&cYou have died! You may spectate the server in Spectator Mode until the next hardcore reset."
+    death: "&cYou have died! You may spectate the server in Spectator Mode until the next hardcore reset."\
+    revive-success: "&aPlayer revived successfully!"
+    revive-fail: "&cFailed to revive player!"
+    not-online: "&cPlayer not online"
   death-options:
     # reserved for future use
     track-deaths: true
