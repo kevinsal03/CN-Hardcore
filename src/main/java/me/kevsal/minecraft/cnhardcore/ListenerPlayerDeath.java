@@ -58,6 +58,10 @@ public class ListenerPlayerDeath implements Listener {
         Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add " + Objects.requireNonNull(plugin.getConfig().getString("config.death-options.dead-group")) + " true server=" +  Objects.requireNonNull(plugin.getConfig().getString("config.death-options.server-context")));
         // set to spectator
         p.setGameMode(GameMode.SPECTATOR);
+        p.setAllowFlight(true);
+        p.setFlying(true);
+        //decrease their max health so if they fall out of the world they die right away
+        p.setMaxHealth(1);
     }
 
 }

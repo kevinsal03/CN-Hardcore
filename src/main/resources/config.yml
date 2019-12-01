@@ -27,3 +27,5 @@ config:
     alive-gms-login: true
     # allow revival of any form
     allow-revive: true
+    # World to teleport revived players to
+    spawn-world: "world"
