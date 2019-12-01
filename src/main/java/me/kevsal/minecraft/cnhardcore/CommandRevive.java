@@ -76,7 +76,7 @@ public class CommandRevive implements CommandExecutor {
         if (allowRevive) {
             p.teleport(Objects.requireNonNull(Bukkit.getWorld("world")).getSpawnLocation());
             p.setGameMode(GameMode.SURVIVAL);
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(plugin.getConfig().getString("config.messages.revive"))));
+            p.sendMessage(ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(plugin.getConfig().getString("config.messages.revived"))));
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " clear server=" + Objects.requireNonNull(plugin.getConfig().getString("config.death-options.server-context")));
             return true;
         } else {
