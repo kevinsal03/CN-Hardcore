@@ -24,8 +24,11 @@ public class CNHC extends JavaPlugin {
         Objects.requireNonNull(this.getCommand("hc-reload")).setExecutor(new CommandReload(this));
         Objects.requireNonNull(this.getCommand("hc-revive")).setExecutor(new CommandRevive(this));
 
-        //register event
+        /* register events */
+        //player die event
         getServer().getPluginManager().registerEvents(new ListenerPlayerDeath(this), this );
+        //player join event
+        getServer().getPluginManager().registerEvents(new ListenerPlayerJoin(this), this );
 
 
         //LuckPerms api
