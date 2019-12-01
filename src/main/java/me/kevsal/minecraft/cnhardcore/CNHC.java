@@ -57,7 +57,7 @@ public class CNHC extends JavaPlugin {
     }
 
     public ArrayList<String> getOnlinePlayerUsernames() {
-        ArrayList<String> internal = null;
+        ArrayList<String> internal = new ArrayList<>();
         for(Player p : Bukkit.getServer().getOnlinePlayers()) {
             internal.add(p.getName());
         }
